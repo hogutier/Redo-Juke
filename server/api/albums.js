@@ -5,7 +5,7 @@ const {db, Album, Song, Artist} = require('../db')
 router.get('/', async (req, res, next) => {
   try {
     const data = await Album.findAll({
-      include: [{model: Artist}]
+      include: [{model: Artist}, {model: Song}]
     })
     res.json(data)
   } catch (error) {
