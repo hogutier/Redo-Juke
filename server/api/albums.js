@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {db, Album, Song, Artist} = require('../db')
+const {Album, Song, Artist} = require('../db')
 
 router.get('/', async (req, res, next) => {
   try {

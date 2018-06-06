@@ -1,16 +1,16 @@
 import React from 'react';
 import ListSongs from './ListSongs'
 
-const SingleAlbum = ({album}) => {
-
+const SingleAlbum = ({album, start, pause, currentSongId, songIsPlaying}) => {
+  console.log(album)
   return (
   <div className='container'>
     <div id='single-album' className='column'>
     <div className='album'>
       <a>
         <img src='default-album.jpg' />
-        <p>ALBUM 2</p>
-        <small>Artist Name</small>
+        <p>{album.name}</p>
+        <small>{album.artist.name}</small>
       </a>
     </div>
     <table id='songs'>
@@ -27,7 +27,12 @@ const SingleAlbum = ({album}) => {
           <ListSongs
             key={song.id}
             album={album}
-            song={song} />
+            song={song}
+            start={start}
+            pause={pause}
+            currentSongId={currentSongId}
+            songIsPlaying={songIsPlaying}
+          />
         )
         }
       </tbody>
